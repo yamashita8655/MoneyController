@@ -6,6 +6,7 @@ public class EntryPoint : MonoBehaviour {
 
 	public void Initialize () {
 		ResourceManager.Instance.Initialize();
+		PlayerPrefsManager.Instance.Initialize();
 		SerializeFieldResourceManager.Instance.Initialize();
 		LocalSceneManager.Instance.Initialize();
 		LocalSceneManager.Instance.LoadScene(LocalSceneManager.Instance.GetFirstSceneName(), null);
