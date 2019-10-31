@@ -84,5 +84,6 @@ public class ContinueScene : SceneBase
     
 	public void OnClickHistoryButton()
     {
+		LocalSceneManager.Instance.LoadScene(LocalSceneManager.SceneName.History, null);
     }
 }
