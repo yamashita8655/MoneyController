@@ -17,16 +17,24 @@ public class ContinueScene : SceneBase
     // Start is called before the first frame update
     void Start()
     {
+		//ContinueData data = LocalSceneManager.Instance.SceneData as ContinueData;
+		//int selectIndex = data.SelectIndex;
+
+		int selectIndex = PlayerPrefsManager.Instance.SelectIndex;
+
 		var PPM = PlayerPrefsManager.Instance;
 
-		string canUseMoneyString = PPM.GetParameter(PlayerPrefsManager.SaveType.CanUseMoney);
+		string saveString = PPM.GetParameter((PlayerPrefsManager.SaveType)selectIndex);
+		string[] list = saveString.Split(',');
+
+		string canUseMoneyString = list[4];
 		int canUseMoney = 0;
 		if (string.IsNullOrEmpty(canUseMoneyString) == false) {
 			canUseMoney = int.Parse(canUseMoneyString);
 		}
 
-		string start = PPM.GetParameter(PlayerPrefsManager.SaveType.StartDays);
-		string end = PPM.GetParameter(PlayerPrefsManager.SaveType.EndDays);
+		string start = list[2];
+		string end = list[3];
 
 		int startDay = 0;
 		if (string.IsNullOrEmpty(start) == false) {
@@ -74,7 +82,7 @@ public class ContinueScene : SceneBase
 	//
 	
 	public void OnClickBackButton() {
-		LocalSceneManager.Instance.LoadScene(LocalSceneManager.SceneName.Title, null);
+		LocalSceneManager.Instance.LoadScene(LocalSceneManager.SceneName.Select, null);
 	}
 
     public void OnClickPaymentButton()

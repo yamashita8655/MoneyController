@@ -11,7 +11,8 @@ public class LocalSceneManager : SimpleMonoBehaviourSingleton<LocalSceneManager>
 		"New",
 		"Continue",
 		"Payment",
-		"History"
+		"History",
+		"Select"
 	};
 
 	public enum SceneName : int {
@@ -20,6 +21,7 @@ public class LocalSceneManager : SimpleMonoBehaviourSingleton<LocalSceneManager>
 		Continue,
 		Payment,
 		History,
+		Select,
 		None
 	};
 

@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/History/History.unity
     guid: 28b04ed8ae305b54094e07ae2b62f8bd
+  - enabled: 1
+    path: Assets/Scenes/Select/Select.unity
+    guid: c7393f5e827d8e74489123ba2f613a78
   m_configObjects: {}

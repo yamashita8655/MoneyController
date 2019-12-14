@@ -6,11 +6,20 @@ using UnityEngine.UI;
 
 public class PlayerPrefsManager : SimpleMonoBehaviourSingleton<PlayerPrefsManager> {
 
+	public static int MaxSaveCount = 4;
+	public int SelectIndex { get; set; }
+
 	public enum SaveType {
-		CanUseMoney,
-		StartDays,
-		EndDays,
+		Save1 = 0,
+		Save2,
+		Save3,
+		Save4,
+		//CanUseMoney,
+		//StartDays,
+		//EndDays,
 		Item,
+		//Name,
+		SaveIdList,
 		Max,
 		None
 	};
@@ -20,10 +29,13 @@ public class PlayerPrefsManager : SimpleMonoBehaviourSingleton<PlayerPrefsManage
 		"KeyCanUseMoney",
 		"KeyStartDays",
 		"KeyEndDays",
-		"KeyItem"
+		"KeyItem",
+		"KeyName",
+		"KeySaveIdList",
 	};
 	
 	public void Initialize() {
+		SelectIndex = 0;
 		CreateFirstData();
 	}
 
