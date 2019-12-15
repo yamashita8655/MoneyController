@@ -458,7 +458,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 000000
+  m_Text: "\u7A7A\u306E\u8CA1\u5E03"
 --- !u!222 &358280988
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -580,7 +580,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 000000
+  m_Text: 0
 --- !u!1 &501864354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,7 +1779,7 @@ MonoBehaviour:
   StartDateText: {fileID: 1985591323}
   EndDateText: {fileID: 5331615}
   CanUseMoneyInputField: {fileID: 2074444174}
-  NameInputField: {fileID: 2074444174}
+  NameInputField: {fileID: 2007597877}
 --- !u!1 &1985591320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,13 +1938,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2007597878}
   m_TextComponent: {fileID: 358280987}
   m_Placeholder: {fileID: 119007265}
-  m_ContentType: 2
+  m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 4
+  m_KeyboardType: 0
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 1
+  m_CharacterValidation: 0
   m_CharacterLimit: 8
   m_OnEndEdit:
     m_PersistentCalls:
@@ -1959,7 +1959,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 000000
+  m_Text: "\u7A7A\u306E\u8CA1\u5E03"
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -2247,7 +2247,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 000000
+  m_Text: 0
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0

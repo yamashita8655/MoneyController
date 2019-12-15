@@ -13,9 +13,18 @@ public class HistoryScene : SceneBase
     void Start()
     {
 		var PPM = PlayerPrefsManager.Instance;
-		string saveItemString = PPM.GetParameter(PlayerPrefsManager.SaveType.Item);
+		string saveItemString = GetItem(PlayerPrefsManager.Instance.SelectIndex);
 		HistoryText.text = saveItemString;
     }
+	
+	private string GetItem(int index) {
+		string output = "";
+		var PPM = PlayerPrefsManager.Instance;
+		int type = ((int)PlayerPrefsManager.SaveType.Item1)+index;
+		output = PPM.GetParameter((PlayerPrefsManager.SaveType)type);
+
+		return output;
+	}
 
     //// Update is called once per frame
     //void Update()

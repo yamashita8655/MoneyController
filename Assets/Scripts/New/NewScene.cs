@@ -103,6 +103,8 @@ public class NewScene : SceneBase
 
 		PPM.SaveParameter((PlayerPrefsManager.SaveType)saveIdIndex, saveString);
 		PPM.SaveParameter(PlayerPrefsManager.SaveType.SaveIdList, saveIdList);
+		int itemIndex = ((int)PlayerPrefsManager.SaveType.Item1) + saveIdIndex;
+		PPM.SaveParameter((PlayerPrefsManager.SaveType)itemIndex, "");
 
 		//// 使った用途のセーブ情報リセット
 		//PPM.SaveParameter(PlayerPrefsManager.SaveType.Item, "");

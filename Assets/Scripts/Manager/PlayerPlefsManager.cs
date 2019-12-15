@@ -14,11 +14,10 @@ public class PlayerPrefsManager : SimpleMonoBehaviourSingleton<PlayerPrefsManage
 		Save2,
 		Save3,
 		Save4,
-		//CanUseMoney,
-		//StartDays,
-		//EndDays,
-		Item,
-		//Name,
+		Item1,
+		Item2,
+		Item3,
+		Item4,
 		SaveIdList,
 		Max,
 		None
@@ -26,11 +25,14 @@ public class PlayerPrefsManager : SimpleMonoBehaviourSingleton<PlayerPrefsManage
 	
 	// 定義用。これプログラム中で編集しちゃダメ。Readonlyにしたいけど、リストの初期化が多分無理
 	private List<string> SaveKeyList = new List<string>(){
-		"KeyCanUseMoney",
-		"KeyStartDays",
-		"KeyEndDays",
-		"KeyItem",
-		"KeyName",
+		"KeySave1",
+		"KeySave2",
+		"KeySave3",
+		"KeySave4",
+		"KeyItem1",
+		"KeyItem2",
+		"KeyItem3",
+		"KeyItem4",
 		"KeySaveIdList",
 	};
 	

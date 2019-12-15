@@ -24,7 +24,7 @@ public class ContinueScene : SceneBase
 
 		var PPM = PlayerPrefsManager.Instance;
 
-		string saveString = PPM.GetParameter((PlayerPrefsManager.SaveType)selectIndex);
+		string saveString = GetSaveParameter(selectIndex);
 		string[] list = saveString.Split(',');
 
 		string canUseMoneyString = list[4];
@@ -58,7 +58,8 @@ public class ContinueScene : SceneBase
 
 		// ここで、使った分の金額を引く
 		int useMoney = 0;
-		string saveItemString = PPM.GetParameter(PlayerPrefsManager.SaveType.Item);
+		int type = ((int)PlayerPrefsManager.SaveType.Item1)+selectIndex;
+		string saveItemString = PPM.GetParameter((PlayerPrefsManager.SaveType)type);
 		Debug.Log(saveItemString);
 		if (string.IsNullOrEmpty(saveItemString) == false) {
 			string[] saveItemList = saveItemString.Split('\n');
@@ -73,6 +74,39 @@ public class ContinueScene : SceneBase
 		RemainDayText.text = (endDay-nowDay+1).ToString();
 		CanUseMoneyText.text = canUseMoneyBase.ToString();
     }
+
+	//private string GetSaveParameter(int index) {
+	//	string parameterString = "";
+
+	//	var PPM = PlayerPrefsManager.Instance;
+	//	string saveIdList = PPM.GetParameter(PlayerPrefsManager.SaveType.SaveIdList);
+
+	//	string[] list = saveIdList.Split(',');
+	//	string getId = list[index];
+	//	
+	//	// 名前の対応
+	//	for (int i = 0; i < 4; i++) {
+	//		string saveList = PPM.GetParameter((PlayerPrefsManager.SaveType)i);
+	//		string[] paramList = saveList.Split(',');
+	//		string paramId = paramList[0];
+	//		if (getId == paramId) {
+	//			parameterString = saveList;
+	//			break;
+	//		}
+	//	}
+
+	//	return parameterString;
+	//}
+	
+	private string GetSaveParameter(int index) {
+		string parameterString = "";
+
+		var PPM = PlayerPrefsManager.Instance;
+		parameterString = PPM.GetParameter((PlayerPrefsManager.SaveType)index);
+
+		return parameterString;
+	}
+	
 
     //// Update is called once per frame
     //void Update()
