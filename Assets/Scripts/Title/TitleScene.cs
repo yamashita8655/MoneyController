@@ -43,4 +43,9 @@ public class TitleScene : SceneBase
     {
         LocalSceneManager.Instance.LoadScene(LocalSceneManager.SceneName.Select, null);
     }
+
+    public void OnClickPrivacyButton()
+    {
+        Application.OpenURL("https://natural-nail-eye.sakura.ne.jp/privacy_policy.html");
+    }
 }

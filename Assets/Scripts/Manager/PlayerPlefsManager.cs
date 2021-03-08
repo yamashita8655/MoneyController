@@ -19,6 +19,7 @@ public class PlayerPrefsManager : SimpleMonoBehaviourSingleton<PlayerPrefsManage
 		Item3,
 		Item4,
 		SaveIdList,
+		IsFirstCreate,
 		Max,
 		None
 	};
@@ -34,6 +35,7 @@ public class PlayerPrefsManager : SimpleMonoBehaviourSingleton<PlayerPrefsManage
 		"KeyItem3",
 		"KeyItem4",
 		"KeySaveIdList",
+		"KeyIsFirstCreate",
 	};
 	
 	public void Initialize() {
@@ -63,6 +65,11 @@ public class PlayerPrefsManager : SimpleMonoBehaviourSingleton<PlayerPrefsManage
 		string flag = PlayerPrefs.GetString(key);
 
 		return flag;
+	}
+
+	public string GetFirstParameter() {
+		string param = GetParameter(SaveType.IsFirstCreate);
+		return param;
 	}
 }
 
