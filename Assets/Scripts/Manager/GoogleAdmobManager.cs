@@ -114,6 +114,7 @@ public class GoogleAdmobManager : SimpleSingleton<GoogleAdmobManager> {
 
 	public void HandleRewardBasedVideoLoaded(object sender, EventArgs args)
 	{
+		Debug.Log("HandleRewardBasedVideoLoaded");
 		if (RequestVideoCallback != null) {
 			RequestVideoCallback(true);
 		}
@@ -121,6 +122,7 @@ public class GoogleAdmobManager : SimpleSingleton<GoogleAdmobManager> {
 
 	public void HandleRewardBasedVideoFailedToLoad(object sender, AdFailedToLoadEventArgs args)
 	{
+		Debug.Log("HandleRewardBasedVideoFailedToLoad");
 		if (RequestVideoCallback != null) {
 			RequestVideoCallback(false);
 		}
@@ -128,6 +130,7 @@ public class GoogleAdmobManager : SimpleSingleton<GoogleAdmobManager> {
 
 	public void HandleRewardBasedVideoOpened(object sender, EventArgs args)
 	{
+		Debug.Log("HandleRewardBasedVideoOpened");
 #if UNITY_IOS
         MobileAds.SetiOSAppPauseOnBackground(true);
 #endif
@@ -135,10 +138,12 @@ public class GoogleAdmobManager : SimpleSingleton<GoogleAdmobManager> {
 
     public void HandleRewardBasedVideoStarted(object sender, EventArgs args)
 	{
+		Debug.Log("HandleRewardBasedVideoStarted");
 	}
 
 	public void HandleRewardBasedVideoClosed(object sender, EventArgs args)
 	{
+		Debug.Log("HandleRewardBasedVideoClosed");
         //RequestRewardBasedVideo();
 #if UNITY_IOS
         MobileAds.SetiOSAppPauseOnBackground(false);
@@ -147,6 +152,7 @@ public class GoogleAdmobManager : SimpleSingleton<GoogleAdmobManager> {
 
     public void HandleRewardBasedVideoRewarded(object sender, Reward args)
 	{
+		Debug.Log("HandleRewardBasedVideoRewarded");
 		string type = args.Type;
 		double amount = args.Amount;
         if (RewardCallback != null) {

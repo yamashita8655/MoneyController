@@ -11,9 +11,12 @@ public class PaymentScene : SceneBase
 	
 	[SerializeField]
 	InputField PriceField = null;
+
+	private bool IsPaymentNow = false;
 	
     void Start()
     {
+		IsPaymentNow = false;
     }
 
     //// Update is called once per frame
@@ -29,6 +32,21 @@ public class PaymentScene : SceneBase
 
 	public void OnClickPaymentButton()
     {
+		if (IsPaymentNow == true) {
+			return;
+		}
+		IsPaymentNow = true;
+
+		StartCoroutine(CoShowInterstitial());
+    }
+
+	private IEnumerator CoShowInterstitial() {
+		GoogleAdmobManager.Instance.ShowInterstitial();
+
+		yield return new WaitForSeconds(3f);
+	
+		IsPaymentNow = false;
+
 		var PPM = PlayerPrefsManager.Instance;
 		//string saveItemString = PPM.GetParameter(PlayerPrefsManager.SaveType.Item);
 		int selectIndex = PlayerPrefsManager.Instance.SelectIndex;
@@ -43,7 +61,7 @@ public class PaymentScene : SceneBase
 		int type = ((int)PlayerPrefsManager.SaveType.Item1)+selectIndex;
 		PPM.SaveParameter((PlayerPrefsManager.SaveType)type, saveItemString);
 		LocalSceneManager.Instance.LoadScene(LocalSceneManager.SceneName.Continue, null);
-    }
+	}
 	
 	private string GetItem(int index) {
 		string output = "";
