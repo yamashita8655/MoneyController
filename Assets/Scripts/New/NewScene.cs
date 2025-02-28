@@ -129,7 +129,7 @@ public class NewScene : SceneBase
 			DecideFunction();
 			PlayerPrefsManager.Instance.SaveParameter(PlayerPrefsManager.SaveType.IsFirstCreate, "1");
 		} else {
-			GoogleAdmobManager.Instance.RequestRewardBasedVideo(
+			/*GoogleAdmobManager.Instance.RequestRewardBasedVideo(
 				(res) => {
                 	if (res == true) {
 						GoogleAdmobManager.Instance.ShowVideo(
@@ -141,7 +141,8 @@ public class NewScene : SceneBase
 						DecideFunction();
 					}
 				}
-			);
+			);*/
+			DecideFunction();
 		}
     }
 

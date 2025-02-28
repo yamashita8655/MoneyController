@@ -8,7 +8,7 @@ public class EntryPoint : MonoBehaviour {
 		ResourceManager.Instance.Initialize();
 		PlayerPrefsManager.Instance.Initialize();
 		SerializeFieldResourceManager.Instance.Initialize();
-        GoogleAdmobManager.Instance.Initialize();
+        //GoogleAdmobManager.Instance.Initialize();
         LocalSceneManager.Instance.Initialize();
 		LocalSceneManager.Instance.LoadScene(LocalSceneManager.Instance.GetFirstSceneName(), null);
 	}

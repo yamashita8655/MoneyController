@@ -41,7 +41,7 @@ public class PaymentScene : SceneBase
     }
 
 	private IEnumerator CoShowInterstitial() {
-		GoogleAdmobManager.Instance.ShowInterstitial();
+		//GoogleAdmobManager.Instance.ShowInterstitial();
 
 		yield return new WaitForSeconds(3f);
 	
